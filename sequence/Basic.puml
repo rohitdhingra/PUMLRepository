@@ -1,0 +1,7 @@
+@startuml
+title Basic Sequence Diagram
+hide footbox
+skinparam monochrome reverse
+A -> B: <<command>>\nPlace Order
+B -> : <<event>>\n Order Placed
+@enduml
