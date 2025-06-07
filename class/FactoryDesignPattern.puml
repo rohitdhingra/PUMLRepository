@@ -1,0 +1,39 @@
+@startuml
+title Factory Design Pattern
+'Interface or abstract product
+interface Product{
+    +use(): void
+}
+
+'Concrete Products
+class ConcreteProductA implements Product{
+    +use(): void
+}
+
+class ConcreteProductB implements Product{
+    +use(): void
+}
+
+abstract class Creator{
+    +createProduct(): Product
+}
+class ConcreteFactoryA extends Creator
+{
+    +createProduct(): Product
+}
+class ConcreteFactoryB extends Creator
+{
+    +createProduct(): Product
+}
+
+
+'Creator <|-- ConcreteFactoryA
+'Creator <|-- ConcreteFactoryB
+'
+'Product<|-- ConcreteProductA
+'Product<|-- ConcreteProductB
+
+ConcreteFactoryA --> ConcreteProductA: creates
+ConcreteFactoryB --> ConcreteProductB: creates
+
+@enduml
