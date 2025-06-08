@@ -1,0 +1,10 @@
+@startuml
+title Duplicates
+hide footbox
+skinparam monochrome  reverse
+
+P->B!!: M
+P->B : M
+B-> C:M
+
+@enduml

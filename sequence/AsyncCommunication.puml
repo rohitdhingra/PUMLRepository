@@ -2,6 +2,6 @@
 title Basic Sequence Diagram
 hide footbox
 skinparam monochrome reverse
-A -> B: <<command>>\nPlace Order
-B -> : <<event>>\n Order Placed
+P -> C: <<command>>\nPlaceOrder
+P -> C: Order Placed\n <<event>>
 @enduml
