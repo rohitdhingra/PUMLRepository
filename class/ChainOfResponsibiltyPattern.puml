@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+title Chain of Reponsibility Design Pattern (Behavioural Design Pattern)
+class client
+{
+}
+interface Handler
+{
++handleRequest()
+}
+
+class ConcreteHandler1
+{
++handleRequest()
+}
+class ConcreteHandler2
+{
++handleRequest()
+}
+
+client --> Handler
+Handler --> Handler: successor
+
+Handler <|-- ConcreteHandler1
+Handler <|-- ConcreteHandler2
+
+
+@enduml

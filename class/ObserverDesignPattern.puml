@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+title Observer Design Pattern (Behavioural Design Pattern)
+
+interface Subject{
++attach(Observer o)
++deatach((Observer o)
++notify()
+}
+
+class ConcreteSubject
+{
+-subjectState
+}
+
+Subject <|-- ConcreteSubject
+Subject --> Observer: notifies
+interface Observer
+{
++update()
+}
+class ConcreteObserver
+{
+-observerState
++update()
+}
+
+Observer <|-- ConcreteObserver
+ConcreteSubject <-- ConcreteObserver : observes
+@enduml
