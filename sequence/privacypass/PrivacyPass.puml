@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+== Issuance Phase ==
+' Issuer:e.g., Cloudflare, Apple
+Client -> Issuer: requests for batch of cryptographic tokens
+Issuer --> Client: a batch of cryptographic tokens using blind signatures
+
+== Redemption Phase ==
+
+Client -> Origin: request resource
+Origin --> Client: challenge the Client to present a Privacy Pass token.
+
+Client -> Origin: Send request with one of the privacy pass token
+Origin -> Issuer: verify the token’s validity  without learning the Client’s identity
+Issuer --> Origin: valid token
+
+
+== Result Phase ==
+
+Origin --> Client: Grant Access to resource
+@enduml

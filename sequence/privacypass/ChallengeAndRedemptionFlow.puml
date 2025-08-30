@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Challenge And Redemption Flow
+autonumber
+
+
+Origin -> Client: WWW-Authenticate: Token Challenge
+Client -> Client: Run Issuance Protocol
+Client -> Origin: Authorization: token
+
+
+@enduml
