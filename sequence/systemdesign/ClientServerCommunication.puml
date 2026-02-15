@@ -1,0 +1,13 @@
+@startuml
+title  Client Server Communication
+autonumber
+
+Client -> Network: Send Request (HTTP,API Call)
+Network -> Server: Transmit Request
+
+Server --> Network: Process Request and Send Response
+Network --> Client: Deliver Response
+
+Client -> Client: Render Response(HTML,Data)
+
+@enduml
