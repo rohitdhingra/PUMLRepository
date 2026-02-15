@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Synchronous vs Asynchronous Communication
+== Synchronous Communication ==
+rnote over Client, Server: Synchronous(Blocking)
+Client -> Server: Request Sent
+Server --> Client: Processing Request
+Server -> Client: Response Sent
+rnote over Client: Client waits until response is received
+
+== Asynchronous Communication ==
+
+rnote over Client, Server: Asynchronous Blocking(Non-Blocking)
+Client -> Server: Request Sent
+rnote over Client: Client continues with other tasks
+
+Server --> Client: Acknowledgment Sent
+Server ->Server: Processing Request(In Background)
+Server -> Client: Response Sent (Later)
+rnote over Client: Client handles response when ready
+
+
+@enduml
