@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+
+Client -> APIGateway: Sends API Request
+APIGateway -> BackendService1: Forwards Request(if applicable)
+APIGateway -> BackendService2: Forwards Request(if applicable)
+APIGateway -> BackendService3: Forwards Request(if applicable)
+BackendService1 --> APIGateway: Sends Response
+BackendService2 --> APIGateway: Sends Response
+BackendService3 --> APIGateway: Sends Response
+APIGateway --> Client: Aggregates and Sends Response
+@enduml
