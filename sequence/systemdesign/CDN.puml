@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant User
+participant CDNEdgeServer as "CDN Edge Server"
+participant OriginServer as "Origin Server"
+
+
+User -> CDNEdgeServer : Request Content(Website, Video, API Data)
+CDNEdgeServer --> User : Check Cache
+
+alt Cache Hit
+    CDNEdgeServer --> User : Serve Content from Cache
+else Cache Miss
+    CDNEdgeServer -> OriginServer : Fetch Content
+    OriginServer --> CDNEdgeServer : Send Requested Content
+    CDNEdgeServer --> User : Deliver Content
+    CDNEdgeServer -> CDNEdgeServer : Store Content in Cache
+end
+
+
+
+@enduml
