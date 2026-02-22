@@ -1,0 +1,11 @@
+@startuml
+
+autonumber
+
+
+Browser -> Server: HTTP Request(GET/POST)
+Server --> Browser: Process Request
+Server --> Browser: HTTP Response(Status Code + Data)
+Browser --> Browser: Render Response
+
+@enduml
